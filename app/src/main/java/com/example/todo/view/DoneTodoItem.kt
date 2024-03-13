@@ -59,7 +59,7 @@ fun DoneTodoItem(
         }
         Checkbox(
             checked = todo.isDone,
-            onCheckedChange = { isChecked ->
+            onCheckedChange = { _ ->
                 onEvent(DoneTodosEvent.RemoveTodoFromDone(todo))
             }
         )

@@ -19,22 +19,16 @@ import androidx.compose.material3.SnackbarResult
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.todo.ui.theme.badAssGreen
 import com.example.todo.ui.theme.creamy
 import com.example.todo.ui.theme.darkBrown
-import com.example.todo.ui.theme.lightBrown
 import com.example.todo.viewModel.TodoListEvent
 import com.example.todo.viewModel.TodoListViewModel
 import com.example.todo.viewModel.UiEvent
-import kotlinx.coroutines.launch
 
 @Composable
 fun TodoListScreen(
@@ -44,7 +38,6 @@ fun TodoListScreen(
 
     val todos = viewModel.todos.collectAsState(initial = emptyList())
     val snackbarHostState = remember { SnackbarHostState() }
-    val scope = rememberCoroutineScope()
     LaunchedEffect(true){
         viewModel.uiEvent.collect{ event ->
             when(event){
