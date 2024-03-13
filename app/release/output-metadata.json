@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.todo",
+  "applicationId": "com.example.delightfultodoapp",
   "variantName": "release",
   "elements": [
     {
